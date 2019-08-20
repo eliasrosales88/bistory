@@ -1,7 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@import './scss/colors';
+
 body{
     height: 100%;
     background-image: url('./assets/images/bistory-bg.jpg');
     background-size: cover;
 
+}
+
+.bg-white{
+    background-color: $white;
+}
+.bg-black-5{
+    background-color: $black-5;
 }
