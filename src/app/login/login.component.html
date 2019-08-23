@@ -11,14 +11,15 @@
         
         <mat-form-field class="example-full-width">
           <input formControlName="email" matInput placeholder="Email" type="email">
-          <mat-error *ngIf="!signupForm.valid && signupForm.touched">Please enter a valid mail</mat-error>
+          <mat-error *ngIf="!signupForm.valid && (signupForm.touched || !signupForm.touched)">Please enter a valid mail</mat-error>
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
           <input formControlName="password" matInput placeholder="Password" type="password">
+          <mat-error *ngIf="!signupForm.valid && (signupForm.touched || !signupForm.touched)">You should have at least 6 characters, 1 Uppercase, 1 number and 1 special character #@$*?</mat-error>
         </mat-form-field>
 
-        <button mat-raised-button color="primary" type="submit">Submit</button>
+        <button class="mt-3" mat-raised-button color="primary" type="submit">Submit</button>
     </form>
 
 </div>
