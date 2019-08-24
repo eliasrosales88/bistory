@@ -12,6 +12,7 @@ import { NavComponent } from './nav/nav.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
     HomeComponent,
     NavComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +33,7 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
     SharedModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[DialogComponent]
 })
 export class AppModule { }
