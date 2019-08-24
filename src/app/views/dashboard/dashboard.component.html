@@ -1,33 +1,47 @@
-<div class="container h-100">
+<div class="container">
     <div class="row pt-2">
-        <button mat-raised-button color="primary" (click)="openInstructions()">Instructions</button>
+        <div class="col-md-12">
+            <button mat-raised-button color="primary" (click)="openInstructions()">Instructions</button>
+
+        </div>
     </div>
     <div class="row pt-5">
-        <div class="col-md-6">
-            <mat-card class="mt-1">
+        <div class="col-md-12">
+            <mat-card id="dashboard-card" class="mt-1">
+                <div class="float-right">
+                    
+                    <mat-icon (click)="toggleAside()">menu</mat-icon>
+                </div>
                 <mat-card-header>
                     <mat-card-title>Bistories</mat-card-title>
                     <mat-card-subtitle></mat-card-subtitle>
                 </mat-card-header>
                 <mat-card-content>
-                    <p>
-                        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                        bred for hunting.
-                    </p>
+                    <mat-drawer-container class="row" class="db-h">
+                        <mat-drawer #aside id="dashboard-aside" class="col-md-3" mode="side" opened>
+                                <mat-list>
+                                    <mat-list-item> Pepper </mat-list-item>
+                                    <mat-list-item> Salt </mat-list-item>
+                                    <mat-list-item> Paprika </mat-list-item>
+                                </mat-list>
+                        </mat-drawer>
+                        <mat-drawer-content class="col-md-9">
+                            Main content Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni consequuntur amet obcaecati est. Assumenda vero eaque, optio dicta voluptas magni est in quasi, facere ad incidunt. Ex iure suscipit aperiam.
+                        </mat-drawer-content>
+                    </mat-drawer-container>
+                    
                 </mat-card-content>
                 <mat-card-actions>
-                <button mat-button>LIKE</button>
-                <button mat-button>SHARE</button>
+                    <button mat-raised-button color="primary" (click)="createNewBistory()">New</button>
                 </mat-card-actions>
             </mat-card>
 
         </div>
-        <div class="col-md-6">
+        <!-- <div class="col-md-8">
             <mat-card class="mt-1">
                 Card
             </mat-card>
 
-        </div>
+        </div> -->
     </div>
 </div>
