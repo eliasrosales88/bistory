@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { NewBistoryService } from '../new-bistory.service';
 
 export interface DialogData {
   title: string;
@@ -14,9 +15,9 @@ export interface DialogData {
 export class DialogComponent implements OnInit {
   newBistory: FormGroup;
   startDate = new Date(1930, 0, 1);
-  initialBistoryData: string[];
 
-  constructor( public dialogRef: MatDialogRef<DialogComponent>, 
+  constructor( public dialogRef: MatDialogRef<DialogComponent>,
+    private newBistoryService: NewBistoryService, 
     @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
 
   ngOnInit() {
@@ -31,10 +32,8 @@ export class DialogComponent implements OnInit {
     console.log(this.newBistory);
     const result = this.newBistory.value;
 
-    // Definir modelo para almacenar la informacion biografica
-    
-    // this.initialBistoryData.push(result);
-    // console.log('this.initialBistoryData',this.initialBistoryData);
+    // Here is pushed the new bistory to the newBistoryService
+    this.newBistoryService.bistories.push(result);
     
   }
 

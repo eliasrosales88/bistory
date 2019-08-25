@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { DialogComponent } from 'src/app/dialog/dialog.component';
+import { NewBistoryService } from 'src/app/new-bistory.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,12 +11,13 @@ import { DialogComponent } from 'src/app/dialog/dialog.component';
 export class DashboardComponent implements OnInit {
   @ViewChild('aside',{static: true}) aside;
   isNewUser: boolean = true;
-  constructor( public dialog: MatDialog) { }
+  bistories: { name: string; lastname: string; birth: Date; description: string }[] = [];
+  
+  constructor( public dialog: MatDialog, private newBistoryService: NewBistoryService) { }
   
   
   ngOnInit() {
-    console.log(this.isNewUser);
-    console.log(localStorage.getItem('isNewUser'));
+    this.bistories = this.newBistoryService.bistories;
     
     if (this.isNewUser && localStorage.getItem('isNewUser') === null) {
       localStorage.setItem('isNewUser', 'false')
@@ -55,5 +57,10 @@ export class DashboardComponent implements OnInit {
       content:``
     }
     this.dialog.open(DialogComponent, dialogConfig);
+  }
+
+  openBistory(){
+    console.log(event);
+    
   }
 }
