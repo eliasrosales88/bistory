@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { DialogComponent } from './dialog/dialog.component';
+import { PanelComponent } from './panel/panel.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { DialogComponent } from './dialog/dialog.component';
     NavComponent,
     LoginComponent,
     DashboardComponent,
-    DialogComponent
+    DialogComponent,
+    PanelComponent
   ],
   imports: [
     BrowserModule,
