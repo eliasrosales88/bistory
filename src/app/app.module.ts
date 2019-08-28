@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { PanelComponent } from './panel/panel.component';
+import { DashToolbarComponent } from './dash-toolbar/dash-toolbar.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PanelComponent } from './panel/panel.component';
     LoginComponent,
     DashboardComponent,
     DialogComponent,
-    PanelComponent
+    PanelComponent,
+    DashToolbarComponent
   ],
   imports: [
     BrowserModule,
