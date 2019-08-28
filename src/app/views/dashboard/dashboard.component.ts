@@ -9,15 +9,18 @@ import { NewBistoryService } from 'src/app/new-bistory.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  @ViewChild('aside',{static: true}) aside;
+  @ViewChild('aside',{static: false}) aside;
   isNewUser: boolean = true;
   bistories: { name: string; lastname: string; birth: Date; description: string }[] = [];
   
-  constructor( public dialog: MatDialog, private newBistoryService: NewBistoryService) { }
+  constructor(  public dialog: MatDialog, 
+                private newBistoryService: NewBistoryService,
+  ) { }
   
   
   ngOnInit() {
     this.bistories = this.newBistoryService.bistories;
+    
     
     if (this.isNewUser && localStorage.getItem('isNewUser') === null) {
       localStorage.setItem('isNewUser', 'false')
@@ -59,7 +62,7 @@ export class DashboardComponent implements OnInit {
     this.dialog.open(DialogComponent, dialogConfig);
   }
 
-  openBistory(){
+  onBistory(){
     console.log(event);
     
   }

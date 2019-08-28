@@ -21,18 +21,17 @@
                         <mat-drawer #aside id="dashboard-aside" class="col-md-3" mode="side" opened>
                                 <mat-list>
                                     <mat-list-item *ngFor="let bistory of bistories; let i = index">
-                                        <a [routerLink]="[ 'panel' ]" routerLinkActive="active">{{bistory.name}}-{{i}} </a>
-                                        <!-- <button mat-button (click)="openBistory(event)">{{bistory.name}}</button> -->
+                                        <a [routerLink]="[ 'panel', i ]" routerLinkActive="active">{{bistory.name}}-{{i}} </a>
                                     </mat-list-item>
                                 </mat-list>
                         </mat-drawer>
                         <mat-drawer-content class="col-md-9">
+                            <!-- DEFINE DASHBOARD TOOLBAR -->
+                                                        
+                            
+                            <!-- DASHBOARD ROUTER -->
                             <router-outlet></router-outlet>
                             
-                            Al hacer click en el boton lateral, se tiene que cambiar el contenido de forma dinamica. cargando un contenido aparte con un bistory router.<br><br>
-                            Se mostrara el perfil de la persona y las opciones de edit mode(write/speech).<br><br>
-
-                            Main content Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni consequuntur amet obcaecati est. Assumenda vero eaque, optio dicta voluptas magni est in quasi, facere ad incidunt. Ex iure suscipit aperiam.
                         </mat-drawer-content>
                     </mat-drawer-container>
                     
