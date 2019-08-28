@@ -33,8 +33,8 @@ export class DashboardComponent implements OnInit {
       this.aside.opened = false;
     }else if(this.aside.opened === false){
       this.aside.opened = true;
-
     }
+    
   }
 
   openInstructions() {
