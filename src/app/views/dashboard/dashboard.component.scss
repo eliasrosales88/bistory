@@ -3,10 +3,7 @@
 }
 
 #dashboard-card{
-    .db-menu{
-        flex: 1 1 auto;
+    #aside-menu:hover{
+        cursor: pointer;
     }
-    // #dashboard-aside{
-    //     min-height: 200px;
-    // }
 }
